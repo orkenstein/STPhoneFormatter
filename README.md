@@ -29,13 +29,13 @@ Build and run the project STPhoneFormatterExample in Xcode to see `STPhoneFormat
 The first thing to do is to set the delegate of your UITextField and in the delegate method `(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string` to add this:
 
 ``` objective-c
-       BOOL phoneNumberHasChanged = [[STPhoneFormatter phoneFormatter] phoneNumberMustChangeInRange:range replacementString:string];
+BOOL phoneNumberHasChanged = [[STPhoneFormatter phoneFormatter] phoneNumberMustChangeInRange:range replacementString:string];
         
-        if (phoneNumberHasChanged) {
-            textField.text = [[STPhoneFormatter phoneFormatter] formattedPhoneNumber];
-        }
+if (phoneNumberHasChanged) {
+	textField.text = [[STPhoneFormatter phoneFormatter] formattedPhoneNumber];
+}
         
-        return NO;
+return NO;
 ```
 
 IMPORTANT: Don't forget to return the value `NO`.
