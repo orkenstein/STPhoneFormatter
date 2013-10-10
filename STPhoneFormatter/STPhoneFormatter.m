@@ -50,7 +50,9 @@ static STPhoneFormatter *_sharedInstance = nil;
     
     return self;
 }
-
+- (void)resetPhoneNumber {
+    [_formattedPhoneNumber setString:@""];
+}
 - (NSArray *)listOfCountrySupported
 {
     return _countries;

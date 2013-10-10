@@ -20,5 +20,5 @@
 - (NSString *)internationalPhoneNumber;
 - (BOOL)setCountryCode:(NSString *)countryCode;
 - (BOOL)phoneNumberMustChangeInRange:(NSRange)range replacementString:(NSString *)string;
-
+- (void)resetPhoneNumber;
 @end
