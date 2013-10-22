@@ -50,9 +50,11 @@ static STPhoneFormatter *_sharedInstance = nil;
     
     return self;
 }
+
 - (void)resetPhoneNumber {
     [_formattedPhoneNumber setString:@""];
 }
+
 - (NSArray *)listOfCountrySupported
 {
     return _countries;
@@ -102,6 +104,23 @@ static STPhoneFormatter *_sharedInstance = nil;
 - (NSString *)internationalPhoneNumber
 {
     return [NSString stringWithFormat:@"+%@%@", _callingCode, [self unformatNumber:_formattedPhoneNumber]];
+}
+
+- (void)setPhoneNumber:(NSString *)phoneNumber
+{
+    _formattedPhoneNumber = [phoneNumber mutableCopy];
+    [self formatPhoneNumber];
+}
+
+- (BOOL)isValid
+{
+    [self formatPhoneNumber];
+    
+    if (_formattedPhoneNumber.length == _format.length) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)formatPhoneNumber
