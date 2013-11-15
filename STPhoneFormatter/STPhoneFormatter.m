@@ -108,7 +108,12 @@ static STPhoneFormatter *_sharedInstance = nil;
 
 - (void)setPhoneNumber:(NSString *)phoneNumber
 {
-    _formattedPhoneNumber = [phoneNumber mutableCopy];
+    if (phoneNumber == nil) {
+        _formattedPhoneNumber = [NSMutableString new];
+    } else {
+        _formattedPhoneNumber = [phoneNumber mutableCopy];
+    }
+    
     [self formatPhoneNumber];
 }
 
