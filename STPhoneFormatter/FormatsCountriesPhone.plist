@@ -52,5 +52,15 @@
 		<key>format</key>
 		<string>(XXX) XXX-XXXX</string>
 	</dict>
+		<dict>
+		<key>code</key>
+		<string>RU</string>
+		<key>country</key>
+		<string>Russian Federation</string>
+		<key>callcode</key>
+		<integer>7</integer>
+		<key>format</key>
+		<string>XXX XXX XXXX</string>
+	</dict>
 </array>
 </plist>
